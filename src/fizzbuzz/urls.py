@@ -25,9 +25,8 @@ class FizzBuzzViewSet(viewsets.ModelViewSet):
     queryset = FizzBuzz.objects.all()
     serializer_class = FizzBuzzSerializer
 
-    @detail_route(methods=['post'])
-    def set_user_agent(self, request, pk=None):
-        user_agent_string = request.META['HTTP_USER_AGENT']
+    def perform_create(self, serializer):
+        serializer.save(user_agent=self.request.META['HTTP_USER_AGENT'])
 
 
 class UserViewSet(viewsets.ModelViewSet):

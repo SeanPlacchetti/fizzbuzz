@@ -5,9 +5,14 @@ vagrant ssh
 cd /vagrant
 sudo make
 ```
-Then visit http://127.0.0.1:8081/ from host machine to see barebones apache+django is running.
+Visit http://127.0.0.1:8081/fizzbuzz from host machine to see a list of fizzbuzzes
+Visit http://127.0.0.1:8081/fizzbuzz/1 from host machine to see the fizzbuzz with id equals 1
 
-You can visit http://127.0.0.1:8081/admin to see the admin site.
+### Run this in the console to add an entry:
+Though, I'd suggest just using the web api form
+```
+curl --include --request POST --header "Content-Type: application/json" --data-binary "{ 'message': 'hi'}" 'http://127.0.0.1:8081/fizzbuzz'
+```
 
 ### Code changes
 When you have code changes that you want to try out, run:
