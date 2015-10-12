@@ -75,12 +75,16 @@ class baseconfig {
     require => Package["python-pip"]
   }
 
+  exec { 'Install restframework via pip':
+    command => '/usr/bin/pip install djangorestframework',
+    require => Package["python-pip"]
+  }
+
   # set up directory for app to be installed to
   file { "/opt/fizzbuzz":
     ensure => "directory",
     owner  => "root",
     group  => "root",
-    # TODO: correct perms?
     mode   => 744,
   }
 

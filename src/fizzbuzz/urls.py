@@ -1,23 +1,44 @@
-"""fizzbuzz URL Configuration
+"""fizzbuzz URL Configuration"""
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/1.8/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  url(r'^$', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  url(r'^$', Home.as_view(), name='home')
-Including another URLconf
-    1. Add an import:  from blog import urls as blog_urls
-    2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
-"""
 from django.conf.urls import include, url
-from django.contrib import admin
+from django.contrib.auth.models import User
+from rest_framework import routers, serializers, viewsets
+from rest_framework.decorators import detail_route
+
+from .models import FizzBuzz
+
+
+class FizzBuzzSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = FizzBuzz
+
+
+# Serializers define the API representation.
+class UserSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = User
+        fields = ('url', 'username', 'email', 'is_staff')
+
+
+# ViewSets define the view behavior.
+class FizzBuzzViewSet(viewsets.ModelViewSet):
+    queryset = FizzBuzz.objects.all()
+    serializer_class = FizzBuzzSerializer
+
+    @detail_route(methods=['post'])
+    def set_user_agent(self, request, pk=None):
+        user_agent_string = request.META['HTTP_USER_AGENT']
+
+
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+router = routers.DefaultRouter()
+router.register(r'fizzbuzz', FizzBuzzViewSet)
+router.register(r'users', UserViewSet)
 
 urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^', include('webapp.urls')),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^', include(router.urls)),
 ]
-

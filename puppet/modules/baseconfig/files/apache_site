@@ -3,7 +3,7 @@ ServerAdmin webmaster@localhost
 # disable indexes globally
 Options -Indexes
 
-WSGIScriptAlias / /opt/fizzbuzz/fizzbuzz/wsgi.py
+WSGIScriptAlias / /opt/fizzbuzz/wsgi.py
 WSGIPythonPath /opt/fizzbuzz
 
 <VirtualHost *:80>
