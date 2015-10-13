@@ -80,6 +80,11 @@ class baseconfig {
     require => Package["python-pip"]
   }
 
+  exec { 'Install markdown via pip':
+    command => '/usr/bin/pip install markdown',
+    require => Package["python-pip"]
+  }
+
   # set up directory for app to be installed to
   file { "/opt/fizzbuzz":
     ensure => "directory",

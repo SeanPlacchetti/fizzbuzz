@@ -1,37 +1,8 @@
 """fizzbuzz URL Configuration"""
 
 from django.conf.urls import include, url
-from django.contrib.auth.models import User
-from rest_framework import routers, serializers, viewsets
-from rest_framework.decorators import detail_route
-
-from .models import FizzBuzz
-
-
-class FizzBuzzSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = FizzBuzz
-
-
-# Serializers define the API representation.
-class UserSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = User
-        fields = ('url', 'username', 'email', 'is_staff')
-
-
-# ViewSets define the view behavior.
-class FizzBuzzViewSet(viewsets.ModelViewSet):
-    queryset = FizzBuzz.objects.all()
-    serializer_class = FizzBuzzSerializer
-
-    def perform_create(self, serializer):
-        serializer.save(user_agent=self.request.META['HTTP_USER_AGENT'])
-
-
-class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+from rest_framework import routers
+from .views import FizzBuzzViewSet, UserViewSet
 
 router = routers.DefaultRouter()
 router.register(r'fizzbuzz', FizzBuzzViewSet)
