@@ -5,8 +5,8 @@ vagrant ssh
 cd /vagrant
 sudo make
 ```
-Visit http://127.0.0.1:8081/fizzbuzz from host machine to see a list of fizzbuzzes
-Visit http://127.0.0.1:8081/fizzbuzz/1 from host machine to see the fizzbuzz with id equals 1
+Visit http://127.0.0.1:8081/fizzbuzz/ from host machine to see a list of fizzbuzzes
+Visit http://127.0.0.1:8081/fizzbuzz/1/ from host machine to see the fizzbuzz with id equals 1
 
 ### Run this in the console to add an entry:
 Though, I'd suggest just using the web api form
