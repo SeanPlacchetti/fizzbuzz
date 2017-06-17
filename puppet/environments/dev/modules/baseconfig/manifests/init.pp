@@ -25,7 +25,7 @@ class baseconfig {
       owner => 'postgres',
       group => 'postgres',
       mode  => '0640',
-      source => 'puppet:///modules/baseconfig/files/pg_hba.conf'
+      source => 'puppet:///modules/baseconfig/pg_hba.conf'
   }
 
   # Create fizzbuzz database and fizzbuzzuser user:
@@ -63,13 +63,11 @@ class baseconfig {
       owner => 'root',
       group => 'root',
       mode  => '0644',
-      source => 'puppet:///modules/baseconfig/files/apache_site';
+      source => 'puppet:///modules/baseconfig/apache_site';
   }
 
   # make sure apache is started
   service { "apache2":
     ensure => "running"
   }
-
-
 }
