@@ -1,7 +1,7 @@
 all:  install migrate load-test-data restart-apache
 
 install:
-	cp -R /vagrant/src/static* /var/www/
+	cp -R /vagrant/src/fizzbuzz* /var/www/
 	rm -rf /opt/fizzbuzz/*
 	cp -R /vagrant/src/* /opt/fizzbuzz/
 
