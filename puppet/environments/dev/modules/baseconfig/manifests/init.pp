@@ -11,6 +11,27 @@ class baseconfig {
     ensure => 'latest',
   }
 
+  package { 'postgresql-server':
+    ensure => 'latest',
+  }
+
+  package { 'postgresql-contrib':
+    ensure => 'latest',
+  }
+
+  file {
+    '/vagrant/database_shim.sh':
+      owner => 'vagrant',
+      group => 'vagrant',
+      mode  => '0777',
+      source => 'puppet:///modules/baseconfig/database_shim.sh',
+      notify => Exec['database_shim'];
+  }
+
+  exec { 'database_shim':
+    command => "/usr/bin/sudo /bin/bash -c '/vagrant/database_shim.sh'",
+  }
+
   file {
     '/home/vagrant/.bashrc':
       owner => 'vagrant',
@@ -21,7 +42,7 @@ class baseconfig {
 
   # Configure postgres:
   file {
-    '/etc/postgresql/9.1/main/pg_hba.conf':
+    '/var/lib/pgsql/data/pg_hba.conf':
       owner => 'postgres',
       group => 'postgres',
       mode  => '0640',
@@ -58,16 +79,16 @@ class baseconfig {
   }
 
   # Configure apache
-  file {
-    '/etc/apache2/sites-available/default':
-      owner => 'root',
-      group => 'root',
-      mode  => '0644',
-      source => 'puppet:///modules/baseconfig/apache_site';
-  }
+ # file {
+ #   '/etc/apache2/sites-available/default':
+ #     owner => 'root',
+ #     group => 'root',
+ #     mode  => '0644',
+ #     source => 'puppet:///modules/baseconfig/apache_site';
+ # }
 
   # make sure apache is started
-  service { "apache2":
-    ensure => "running"
-  }
+  #service { "apache2":
+  #  ensure => "running"
+  #}
 }
