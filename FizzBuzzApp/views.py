@@ -1,7 +1,9 @@
-from rest_framework import viewsets
-from .models import FizzBuzz
 from django.contrib.auth.models import User
+from rest_framework import viewsets
+
+from .models import FizzBuzz
 from .serializers import FizzBuzzSerializer, UserSerializer
+
 __author__ = 'seanplacchetti'
 
 

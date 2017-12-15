@@ -36,7 +36,8 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'fizzbuzz',
+    'FizzBuzz',
+    'FizzBuzzApp',
     'rest_framework',
 )
 
@@ -51,7 +52,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
-ROOT_URLCONF = 'fizzbuzz.urls'
+ROOT_URLCONF = 'FizzBuzz.urls'
 
 TEMPLATES = [
     {

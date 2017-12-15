@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import FizzBuzz
+from FizzBuzzApp.models import FizzBuzz
 from django.contrib.auth.models import User
 
 __author__ = 'seanplacchetti'
