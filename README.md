@@ -1,16 +1,17 @@
 # fizzbuzz
 Docker development environment for a Django REST Framework web application
 
-Playing with your application:
-To run the app
+###Playing with your application:
+
+#####To run the app
 
 `docker-compose up`
 
-To run the tests
+#####To run the tests
 
 `docker-compose run web python manage.py test`
 
-To auto-run the tests
+#####To auto-run the tests
 
 Create a file called scent.py:
 
@@ -25,19 +26,19 @@ def execute_tests(*args):
     return call(fn) == 0
 ```
 
-Then you can run:
+#####Then you can run:
 
 `docker-compose run web sniffer`
 
 This will automatically run the tests each time you make changes to the code
 
-Generate a test coverage report
+###Generate a test coverage report
 
-Generate coverage:
+#####Generate coverage:
 
 `docker-compose run web coverage run --source='.'  manage.py test`
 
-Generate an html report
+#####Generate an html report
 
 `docker-compose run web coverage html --directory=reports`
 
