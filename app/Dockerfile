@@ -1,11 +1,16 @@
 FROM python:3.6-alpine
-WORKDIR /FizzBuzzApp
+RUN apk add --update --no-cache \
+    build-base \
+    postgresql-dev
+
+WORKDIR /app
 RUN mkdir ./static
-ENV PYTHONUNBUFFERED 1
-RUN mkdir /code
-WORKDIR /code
-ADD requirements.txt /code/
+
+COPY ./ /app/
 RUN pip3 install -r requirements.txt
-ADD . /code/
+
+WORKDIR /app/FizzBuzz
+
 EXPOSE 8000
-CMD exec gunicorn -w 4 -b :8000 todoer.wsgi
+
+CMD exec gunicorn -w 4 -b :8000 FizzBuzz.wsgi

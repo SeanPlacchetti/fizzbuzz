@@ -1,21 +1,17 @@
 version: "2"
 services:
-  web:
-    build: .
+  fizzbuzz:
+    build: ./app
     depends_on:
-      - db
-    volumes:
-      - .:/code
+      - postgres
     ports:
       - "8000:8000"
-    links:
-      - db
     environment:
       - POSTGRES_HOST=postgres
     command: sh ./setup.sh
-    command: gunicorn FizzBuzz.wsgi:application -b :8000
-  db:
-    image: postgres
+
+  postgres:
+    image: "postgres:9.6"
     environment:
       - POSTGRES_PASSWORD=fizzbuzzpassword
       - POSTGRES_USER=fizzbuzzuser

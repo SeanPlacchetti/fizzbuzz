@@ -25,11 +25,11 @@ SECRET_KEY = '49-n_jme^^2lti4g8_rt#!taa#2(^rbnq7h4s()t)e3u0)rf-2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split()
+CORS_ORIGIN_WHITELIST = os.environ.get('CORS_ORIGIN_WHITELIST', '').split()
 
 
 # Application definition
-
 INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
@@ -37,10 +37,12 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'rest_framework',
+    'corsheaders',
     'FizzBuzz',
     'FizzBuzzApp',
-    'rest_framework',
 )
+
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -80,10 +82,13 @@ WSGI_APPLICATION = 'FizzBuzz.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'fizzbuzz',
-        'USER': 'fizzbuzzuser',
-        'PASSWORD': 'fizzbuzzpassword',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get("POSTGRES_DB", "fizzbuzz"),
+        'USER': os.environ.get("POSTGRES_USER", "fizzbuzzuser"),
+        'PASSWORD': os.environ.get("POSTGRES_PASSWORD", "fizzbuzzpassword"),
+        'HOST': os.environ.get("POSTGRES_HOST", "postgres"),
+        'PORT': os.environ.get("POSTGRES_PORT", 5432),
+        'CONN_MAX_AGE': 60
     }
 }
 
@@ -105,8 +110,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-STATIC_ROOT = '/FizzBuzzApp/static'
 STATIC_URL = '/static/'
+STATIC_ROOT = '/app/static'
 
 APPEND_SLASH=False
 REST_FRAMEWORK = {

@@ -3,7 +3,7 @@
 from django.conf.urls import include, url
 from rest_framework import routers
 
-from app.FizzBuzz.FizzBuzzApp.views import FizzBuzzViewSet, UserViewSet
+from FizzBuzz.views import FizzBuzzViewSet, UserViewSet
 
 router = routers.DefaultRouter()
 router.register(r'fizzbuzz', FizzBuzzViewSet)
