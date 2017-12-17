@@ -9,6 +9,8 @@ services:
     environment:
       - POSTGRES_HOST=postgres
     command: sh ./setup.sh
+    volumes:
+      - ./app/FizzBuzz/:/app/FizzBuzz/
   postgres:
     image: "postgres:9.6"
     environment:

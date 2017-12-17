@@ -1,10 +1,8 @@
 FROM python:3.6-alpine
-RUN apk add --update --no-cache \
-    build-base \
-    postgresql-dev
+RUN apk add --update --no-cache build-base postgresql-dev
 WORKDIR /app
 RUN mkdir ./static
-COPY ./ /app/
+ADD ./ /app/
 RUN pip3 install -r requirements.txt
 WORKDIR /app/FizzBuzz
 EXPOSE 8000
