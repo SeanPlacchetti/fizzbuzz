@@ -26,7 +26,6 @@ SECRET_KEY = '49-n_jme^^2lti4g8_rt#!taa#2(^rbnq7h4s()t)e3u0)rf-2'
 DEBUG = True
 
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split()
-CORS_ORIGIN_WHITELIST = os.environ.get('CORS_ORIGIN_WHITELIST', '').split()
 
 
 # Application definition
@@ -38,7 +37,6 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'rest_framework',
-    'corsheaders',
     'FizzBuzz',
     'FizzBuzzApp',
 )

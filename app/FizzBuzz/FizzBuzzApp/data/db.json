@@ -1,59 +1,164 @@
 [
   {
+    "model": "auth.user",
+    "pk": 1,
     "fields": {
-      "model": "logentry",
-      "app_label": "admin"
-    },
-    "model": "contenttypes.contenttype",
-    "pk": 1
+      "password": "",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "Prince",
+      "first_name": "",
+      "last_name": "",
+      "email": "prince@valhalla.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2017-12-17T02:04:59.522Z",
+      "groups": [],
+      "user_permissions": []
+    }
   },
   {
+    "model": "auth.user",
+    "pk": 2,
     "fields": {
-      "model": "permission",
-      "app_label": "auth"
-    },
-    "model": "contenttypes.contenttype",
-    "pk": 2
+      "password": "",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "DavidBowie",
+      "first_name": "",
+      "last_name": "",
+      "email": "bowie@valhalla.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2017-12-17T02:10:26.974Z",
+      "groups": [],
+      "user_permissions": []
+    }
   },
   {
+    "model": "auth.user",
+    "pk": 3,
     "fields": {
-      "model": "group",
-      "app_label": "auth"
-    },
-    "model": "contenttypes.contenttype",
-    "pk": 3
+      "password": "",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "ChuckBerry",
+      "first_name": "",
+      "last_name": "",
+      "email": "berry@valhalla.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2017-12-17T02:10:39.257Z",
+      "groups": [],
+      "user_permissions": []
+    }
   },
   {
+    "model": "auth.user",
+    "pk": 4,
     "fields": {
-      "model": "user",
-      "app_label": "auth"
-    },
-    "model": "contenttypes.contenttype",
-    "pk": 4
+      "password": "",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "FreddieMercury",
+      "first_name": "",
+      "last_name": "",
+      "email": "mercury@valhalla.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2017-12-17T02:10:59.110Z",
+      "groups": [],
+      "user_permissions": []
+    }
   },
   {
+    "model": "auth.user",
+    "pk": 5,
     "fields": {
-      "model": "contenttype",
-      "app_label": "contenttypes"
-    },
-    "model": "contenttypes.contenttype",
-    "pk": 5
+      "password": "",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "JohnLennon",
+      "first_name": "",
+      "last_name": "",
+      "email": "lennon@valhalla.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2017-12-17T02:11:14.680Z",
+      "groups": [],
+      "user_permissions": []
+    }
   },
   {
+    "model": "FizzBuzzApp.fizzbuzz",
+    "pk": 1,
     "fields": {
-      "model": "session",
-      "app_label": "sessions"
-    },
-    "model": "contenttypes.contenttype",
-    "pk": 6
+      "created_at": "2017-12-17T02:08:50.526Z",
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36",
+      "message": "This is the first test"
+    }
   },
   {
+    "model": "FizzBuzzApp.fizzbuzz",
+    "pk": 2,
     "fields": {
-      "message": "Message 1",
-      "created_at": "2015-07-16T11:40:43.725Z",
-      "user_agent": "Chrome"
-    },
-    "model": "fizzbuzz.FizzBuzz",
-    "pk": 1
+      "created_at": "2017-12-17T02:09:17.912Z",
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36",
+      "message": "Here is the second test"
+    }
+  },
+  {
+    "model": "FizzBuzzApp.fizzbuzz",
+    "pk": 3,
+    "fields": {
+      "created_at": "2017-12-17T02:09:22.197Z",
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36",
+      "message": "Here is the second test"
+    }
+  },
+  {
+    "model": "FizzBuzzApp.fizzbuzz",
+    "pk": 4,
+    "fields": {
+      "created_at": "2017-12-17T02:09:29.794Z",
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36",
+      "message": "I accidentally put the same stuff in for the second and third tests, which is awkward for the test data, oh well. Fourth test."
+    }
+  },
+  {
+    "model": "FizzBuzzApp.fizzbuzz",
+    "pk": 5,
+    "fields": {
+      "created_at": "2017-12-17T02:09:36.285Z",
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36",
+      "message": "FIFTH TEST."
+    }
+  },
+  {
+    "model": "FizzBuzzApp.fizzbuzz",
+    "pk": 6,
+    "fields": {
+      "created_at": "2017-12-17T02:09:44.511Z",
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36",
+      "message": "6th test."
+    }
+  },
+  {
+    "model": "FizzBuzzApp.fizzbuzz",
+    "pk": 7,
+    "fields": {
+      "created_at": "2017-12-17T02:09:53.596Z",
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36",
+      "message": "THE SEVENTH TEST"
+    }
+  },
+  {
+    "model": "FizzBuzzApp.fizzbuzz",
+    "pk": 8,
+    "fields": {
+      "created_at": "2017-12-17T02:09:59.881Z",
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36",
+      "message": "8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8"
+    }
   }
 ]

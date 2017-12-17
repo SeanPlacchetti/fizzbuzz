@@ -7,4 +7,5 @@ done
 
 ./manage.py migrate --noinput
 ./manage.py collectstatic --noinput
+./manage.py loaddata ./FizzBuzzApp/data/db.json
 exec gunicorn -w 4 -b :8000 FizzBuzz.wsgi
