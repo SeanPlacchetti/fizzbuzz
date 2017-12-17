@@ -1,4 +1,6 @@
 # fizzbuzz
+[![Documentation Status](https://readthedocs.org/projects/fizzbuzz/badge/?version=latest)](http://fizzbuzz.readthedocs.io/en/latest/?badge=latest)
+
 Django REST Framework API with a browser based web-UI contained with Docker. 
 
 The purpose of fizzbuzz is to be a starter project. I went searching for a project doing something along these lines and was unable to find something that fit all the criteria of being a good development environment using the tech I wanted to see in place.
