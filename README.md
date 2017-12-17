@@ -1,5 +1,7 @@
 # fizzbuzz
-[![Documentation Status](https://readthedocs.org/projects/fizzbuzz/badge/?version=latest)](http://fizzbuzz.readthedocs.io/en/latest/?badge=latest) [![Maintainability](https://api.codeclimate.com/v1/badges/d652bea8f8a872236724/maintainability)](https://codeclimate.com/github/SeanPlacchetti/fizzbuzz/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/d652bea8f8a872236724/test_coverage)](https://codeclimate.com/github/SeanPlacchetti/fizzbuzz/test_coverage) [![Build Status](https://travis-ci.org/SeanPlacchetti/fizzbuzz.svg?branch=master)](https://travis-ci.org/SeanPlacchetti/fizzbuzz)
+[![Documentation Status](https://readthedocs.org/projects/fizzbuzz/badge/?version=latest)](http://fizzbuzz.readthedocs.io/en/latest/?badge=latest) [![Maintainability](https://api.codeclimate.com/v1/badges/d652bea8f8a872236724/maintainability)](https://codeclimate.com/github/SeanPlacchetti/fizzbuzz/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/d652bea8f8a872236724/test_coverage)](https://codeclimate.com/github/SeanPlacchetti/fizzbuzz/test_coverage) [![Build Status](https://travis-ci.org/SeanPlacchetti/fizzbuzz.svg?branch=master)](https://travis-ci.org/SeanPlacchetti/fizzbuzz) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+
 
 Django REST Framework API with a browser based web-UI contained with Docker. 
 
